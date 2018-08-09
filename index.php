@@ -53,6 +53,17 @@
 
   /* Program segment to test the Add Calendar Event function (Task 3)
 
+  // $gcmInstance->setAccessToken(array(
+  //   'access_token' => 'ya29.Glv0BfZTxnAYNqwUBdvvYOx4eOKVR6wn2joGfW-Uwbb2ZankFgfLgY5tEkKGoirwmzLLqSsdp-A6GK6HPBO6zffiyA6vlALgFIwr2En2Sy8kuGvv9yygNiYq1_75',
+  //   'token_type' => 'Bearer',
+  //   'expires_in' => 3600,
+  //   'refresh_token' => '1/nxXoP-PSAoNFMroEHY8A8Bmmy25k1p2dLckjwixzbQY',
+  //   'scope' => 'https://www.googleapis.com/auth/calendar',
+  //   'created' => '1533822448'
+  // ));
+  //
+  // $gcmInstance->setCalendarId('primary');
+  //
   // $event_details = array(
   //   'summary' => 'Google I/O 2018',
   //   'location' => '800 Howard St., San Francisco, CA 94103',
