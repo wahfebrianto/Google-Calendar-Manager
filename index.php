@@ -1,57 +1,56 @@
 <?php
   require __DIR__ . '/GoogleCalendarManager.php';
 
-  $gcmInstance = new GoogleCalendarManager();
+  $gcmInstance = GoogleCalendarManager::getInstance();
 
-  /* Program segment to test the Auth Url function (Task 1)
+  // /* Program segment to test the Auth Url function (Task 1)
 
   // $authUrl = $gcmInstance->obtainAuthUrl();
   // echo $authUrl;
   // echo "<br>";
 
-  End of program segment */
+  // End of program segment */
 
 
-  /* Program segment to test the Access Token function (Task 1)
+  // /* Program segment to test the Access Token function (Task 1)
 
-  // $accessToken = $gcmInstance->obtainAccessToken('4/NgAYJ9tTDVo-D8_p4wYHfj_0yGVu4Bhi5F0hPAPOyOkaFKrTSiPQHHo');
+  $accessToken = $gcmInstance->obtainAccessToken('4/NwDE07zy0ekouaptA6prtHynaBsKaWT0GNUDMe7bxGUjnHL8n66yl1w');
   // print_r($accessToken);
 
-  End of program segment */
+  // End of program segment */
 
   //============================================================================================//
 
-  /* Program segment to test the Retrieve Events function (Task 2)
+  // /* Program segment to test the Retrieve Events function (Task 2)
+  $setAccessTokenReq = $gcmInstance->setAccessToken(array(
+    'access_token' => 'ya29.Glv0BfZTxnAYNqwUBdvvYOx4eOKVR6wn2joGfW-Uwbb2ZankFgfLgY5tEkKGoirwmzLLqSsdp-A6GK6HPBO6zffiyA6vlALgFIwr2En2Sy8kuGvv9yygNiYq1_75',
+    'token_type' => 'Bearer',
+    'expires_in' => 3600,
+    'refresh_token' => '1/nxXoP-PSAoNFMroEHY8A8Bmmy25k1p2dLckjwixzbQY',
+    'scope' => 'https://www.googleapis.com/auth/calendar',
+    'created' => '1533822448'
+  ));
 
-  // $gcmInstance->setAccessToken(array(
-  //   'access_token' => 'ya29.Glv0BfZTxnAYNqwUBdvvYOx4eOKVR6wn2joGfW-Uwbb2ZankFgfLgY5tEkKGoirwmzLLqSsdp-A6GK6HPBO6zffiyA6vlALgFIwr2En2Sy8kuGvv9yygNiYq1_75',
-  //   'token_type' => 'Bearer',
-  //   'expires_in' => 3600,
-  //   'refresh_token' => '1/nxXoP-PSAoNFMroEHY8A8Bmmy25k1p2dLckjwixzbQY',
-  //   'scope' => 'https://www.googleapis.com/auth/calendar',
-  //   'created' => '1533822448'
-  // ));
-  //
-  // $gcmInstance->setSearchParams(array(
-  //   'maxResults' => 2,
-  //   'orderBy' => 'startTime',
-  //   'singleEvents' => true,
-  //   'timeMin' => date('c')
-  // ));
-  //
-  // $gcmInstance->setCalendarId('primary');
+  $setSearchParamsReq = $gcmInstance->setSearchParams(array(
+    'maxResults' => 2,
+    'orderBy' => 'startTime',
+    'singleEvents' => true,
+    'timeMin' => date('c')
+  ));
 
-  // $events = $gcmInstance->retrieveCalendar();
-  //
-  // echo "<pre>";
-  // print_r($events);
-  // echo "</pre>";
+  $setCalendarIdReq = $gcmInstance->setCalendarId('primary');
 
-  End of program segment */
+  $events = $gcmInstance->retrieveCalendar();
+
+  echo "<pre>";
+  print_r($events);
+  echo "</pre>";
+
+  // End of program segment */
 
 //============================================================================================//
 
-  /* Program segment to test the Add Calendar Event function (Task 3)
+  // /* Program segment to test the Add Calendar Event function (Task 3)
 
   // $gcmInstance->setAccessToken(array(
   //   'access_token' => 'ya29.Glv0BfZTxnAYNqwUBdvvYOx4eOKVR6wn2joGfW-Uwbb2ZankFgfLgY5tEkKGoirwmzLLqSsdp-A6GK6HPBO6zffiyA6vlALgFIwr2En2Sy8kuGvv9yygNiYq1_75',
@@ -97,5 +96,5 @@
   // print_r($events);
   // echo "</pre>";
 
-  End of program segment */
+  // End of program segment */
 ?>
